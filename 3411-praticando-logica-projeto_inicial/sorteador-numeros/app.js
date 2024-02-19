@@ -2,7 +2,17 @@ function sortear() {
     let quantidade = parseInt(document.getElementById('quantidade').value);
     let de = parseInt(document.getElementById('de').value);
     let ate = parseInt(document.getElementById('ate').value);
+    let limite = ate - de + 1;
 
+    if (de >= ate) {
+        alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
+        return;
+    }
+    
+    if (quantidade > limite) {
+        alert('Quantidade de números a serem sorteados é maior que o intervalo informado. Verifique!');
+        return;
+    }
     
     let sorteados = [];
     let numero;
