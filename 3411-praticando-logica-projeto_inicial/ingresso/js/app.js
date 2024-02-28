@@ -1,3 +1,7 @@
+let pista = parseInt(document.getElementById('qtd-pista').textContent);
+let superior = parseInt(document.getElementById('qtd-superior').textContent);
+let inferior = parseInt(document.getElementById('qtd-inferior').textContent);
+
 function comprar() {
     let tipo = document.getElementById('tipo-ingresso').value;
     let qtd = parseInt(document.getElementById('qtd').value);
@@ -12,10 +16,12 @@ function comprar() {
         comprarInferior(qtd);
     }
     document.getElementById('qtd').value = '';
+    if(pista == 0 && superior == 0 && inferior == 0) {
+        alert('Ingressos esgotados');
+    }
 }
 
 function comprarPista(qtd) {
-    let pista = parseInt(document.getElementById('qtd-pista').textContent);
     if(qtd > pista) {
         alert('Quantidade indisponível para Pista');    
     }
@@ -27,7 +33,6 @@ function comprarPista(qtd) {
 }
 
 function comprarSuperior(qtd) {
-    let superior = parseInt(document.getElementById('qtd-superior').textContent);
     if(qtd > superior) {
         alert('Quantidade indisponível para Superior');
     }
@@ -39,7 +44,6 @@ function comprarSuperior(qtd) {
 }
 
 function comprarInferior(qtd) {
-    let inferior = parseInt(document.getElementById('qtd-inferior').textContent);
     if(qtd > inferior) {
         alert('Quantidade indisponível para Inferior');
     }
