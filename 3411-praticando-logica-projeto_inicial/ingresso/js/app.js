@@ -6,6 +6,11 @@ function comprar() {
     let tipo = document.getElementById('tipo-ingresso').value;
     let qtd = parseInt(document.getElementById('qtd').value);
 
+    if(qtd <= 0) {
+        alert('Quantidade inválida');
+        return;
+    }
+
     if(tipo == 'pista') {
         comprarPista(qtd);
     }
